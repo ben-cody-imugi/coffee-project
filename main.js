@@ -38,6 +38,7 @@ function updateCoffees(e, input) {
             }
         });
     }
+    filteredCoffees = filteredCoffees.sort(filteredCoffees.id);
     coffeeDiv.innerHTML = renderCoffees(filteredCoffees);
 }
 
