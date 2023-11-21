@@ -6,40 +6,43 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
-<body class="container bg-light-subtle">
-<header>
-    <h1>coffee</h1>
-    <section class="row" id="all-forms">
-                <form id="search">
-                    <label class="form-label " for="roast-selection"></label>
-                    <select class="form-select-sm" id="roast-selection">
-                        <option value="all">all</option>
-                        <option value="light">light</option>
-                        <option value="medium">medium</option>
-                        <option value="dark">dark</option>
-                    </select>
-                    <label for="name-selector">Search for a coffee</label>
-                    <input class="input-group-sm" type="text" id="name-selector">
-                </form>
-                <form id="add">
-                    <label for="add-roast-selection"></label>
-                    <select class="form-select-sm" id="add-roast-selection">
-                        <option value="all">all</option>
-                        <option value="light">light</option>
-                        <option value="medium">medium</option>
-                        <option value="dark">dark</option>
-                    </select>
-                    <label class="" for="name-selector">Add a coffee</label>
-                    <input class="input-group-sm" type="text" id="add-name-selector">
-                    <div class="dropdown">
-                        <button class="btn btn-outline-primary" type="button">Add Coffee</button>
-                    </div>
-                </form>
+<body class=" bg-light-subtle">
+<header class ="w-100 bg-primary-subtle">
+
+    <section class="row m-2" id="all-forms">
+        <div class = "col-12 d-flex justify-content-end">
+            <div class = "d-flex w-100 justify-content-center my-auto">
+        <h1>B.C. Coffee</h1>
+        </div>
+        <form class = "border border-primary border-2 p-2 " id="search">
+            <label class="form-label " for="roast-selection"></label>
+            <select class="form-select-sm" id="roast-selection">
+                <option value="all">all</option>
+                <option value="light">light</option>
+                <option value="medium">medium</option>
+                <option value="dark">dark</option>
+            </select>
+            <label class = "" for="name-selector">Search for a coffee</label>
+            <input class="input-group-sm m-1" type="text" id="name-selector">
+        </form>
+        <form class = "border border-primary border-2 p-2 "  id="add">
+            <label for="add-roast-selection"></label>
+            <select class="form-select-sm" id="add-roast-selection">
+                <option value="all">all</option>
+                <option value="light">light</option>
+                <option value="medium">medium</option>
+                <option value="dark">dark</option>
+            </select>
+            <label class="" for="name-selector">Add a coffee</label>
+            <input class="input-group-sm m-1" type="text" id="add-name-selector">
+            <div class="dropdown">
+                <button class="btn btn-outline-primary m-1" type="button">Add Coffee</button>
             </div>
+        </form>
         </div>
     </section>
 </header>
-<main class="bg-light rounded border row">
+<main class=" container bg-light rounded border row">
     <section id="coffee-container" class="col-10 offset-1 h-auto">
         <div class="col-12 d-flex flex-wrap my-3" id="coffees">
 
