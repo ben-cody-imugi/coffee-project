@@ -1,7 +1,7 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    let html = '<div class="col-4 d-flex py-1"><div class="coffee bg-primary p-2 text-light w-75 rounded m-auto">';
+    let html = '<div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex py-1"><div class="coffee bg-primary p-2 text-light rounded m-auto d-flex d-md-block">';
     html += `<h2>${coffee.name}</h2>`;
     html += `<p>${coffee.roast}</p>`;
     html += '</div></div>';
