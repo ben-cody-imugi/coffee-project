@@ -121,3 +121,4 @@ roastSelection.addEventListener("change", updateCoffees);
 nameSelector.addEventListener("input", updateInput);
 addBtn.addEventListener("click", addCoffee);
 document.querySelector("#add-name-selector").addEventListener("submit", submitTest);
+

@@ -27,11 +27,16 @@ button{
 
 #add-coffee-form{
     display: flex;
+    align-items: center;
 
 }
 
 #all-forms{
     display: flex;
-    align-content: flex-end;
+   align-items: center;
+}
+
+#coffees{
+
 }
 
