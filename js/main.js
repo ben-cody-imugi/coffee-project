@@ -37,7 +37,7 @@ function updateCoffees(e, input) {
     } else if (input !== undefined && roastSelection.value !== "all") {
         filteredCoffees = [...input];
     }
-    coffeeDiv.innerHTML = renderCoffees(filteredCoffees);
+    coffeeDiv.innerHTML = renderCoffees(filteredCoffees.sort(coffees.id).reverse());
 }
 
 function updateInput(e) {
@@ -71,8 +71,8 @@ function addCoffee(e, roast, name) {
             name: name,
             roast: roast
         }
-            coffees.unshift(newCoffee);
-            updateCoffees(e, coffees);
+        coffees.unshift(newCoffee);
+        updateCoffees(e, coffees);
     }
 }
 
