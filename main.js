@@ -109,6 +109,10 @@ const nameSelector = document.querySelector('#name-selector');
 const addBtn = document.querySelector("#add button");
 let roast = "";
 let name = "";
+document.getElementById("add").addEventListener('submit', addCoffee, false)
+
+
+
 
 
 coffeeDiv.innerHTML = renderCoffees(coffees);
