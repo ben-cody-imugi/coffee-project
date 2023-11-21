@@ -1,10 +1,10 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    let html = '<div class="coffee">';
+    let html = '<div class="col-4 d-flex py-1"><div class="coffee bg-primary p-2 text-light w-75 rounded m-auto">';
     html += `<h2>${coffee.name}</h2>`;
     html += `<p>${coffee.roast}</p>`;
-    html += '</div>';
+    html += '</div></div>';
 
     return html;
 }

@@ -3,52 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
-<body>
-<h1>Coffee!</h1>
-<div class = "row" id="all-forms">
-<div class="row" id="search-form">
-    <div class="col">
-        <form id="search">
-            <label class="form-label " for="roast-selection"></label>
-            <select class="form-select-sm" id="roast-selection">
-                <option value="all">all</option>
-                <option value="light">light</option>
-                <option value="medium">medium</option>
-                <option value="dark">dark</option>
-            </select>
-    <label for="name-selector">Search for a coffee</label>
-    <input class="input-group-sm" type="text" id="name-selector">
-    </form>
-    </div>
-</div>
-<div class = "row" id="add-coffee-form">
-    <div class = "cols-6" >
-<form id="add">
-    <label for="add-roast-selection"></label>
-    <select class="form-select-sm" id="add-roast-selection">
-        <option value="all">all</option>
-        <option value="light">light</option>
-        <option value="medium">medium</option>
-        <option value="dark">dark</option>
-    </select>
-    <label class="" for="name-selector">Add a coffee</label>
-    <input class="input-group-sm" type="text" id="add-name-selector">
-    <div class = "dropdown">
-    <button class="btn btn-outline-primary" type="button">Add Coffee</button>
-    </div>
-</form>
-</div>
-</div>
-</div>
-<div class ="card" id="coffees">
-    <h2>NAME</h2>
-    <p>ROAST</p>
-</div>
+<body class="container bg-light-subtle">
+<header>
+    <h1>coffee</h1>
+    <section class="row" id="all-forms">
+                <form id="search">
+                    <label class="form-label " for="roast-selection"></label>
+                    <select class="form-select-sm" id="roast-selection">
+                        <option value="all">all</option>
+                        <option value="light">light</option>
+                        <option value="medium">medium</option>
+                        <option value="dark">dark</option>
+                    </select>
+                    <label for="name-selector">Search for a coffee</label>
+                    <input class="input-group-sm" type="text" id="name-selector">
+                </form>
+                <form id="add">
+                    <label for="add-roast-selection"></label>
+                    <select class="form-select-sm" id="add-roast-selection">
+                        <option value="all">all</option>
+                        <option value="light">light</option>
+                        <option value="medium">medium</option>
+                        <option value="dark">dark</option>
+                    </select>
+                    <label class="" for="name-selector">Add a coffee</label>
+                    <input class="input-group-sm" type="text" id="add-name-selector">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary" type="button">Add Coffee</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</header>
+<main class="bg-light rounded border row">
+    <section id="coffee-container" class="col-10 offset-1 h-auto">
+        <div class="col-12 d-flex flex-wrap my-3" id="coffees">
+
+        </div>
+    </section>
+</main>
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-<script src="main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

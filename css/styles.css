@@ -1,0 +1,37 @@
+/*.input-group{*/
+/*    display: flex;*/
+/*    align-content: end;*/
+/*}*/
+/*#name-selector.input-group-sm{*/
+
+/*}*/
+
+/*button{*/
+/*    display: flex;*/
+/*    align-self: inherit;*/
+/*}*/
+
+/*#search-form{*/
+/*    display: flex;*/
+/*}*/
+
+/*#add-coffee-form{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+
+/*}*/
+
+/*#all-forms{*/
+/*    display: flex;*/
+/*   align-items: center;*/
+/*}*/
+
+#coffees{
+
+}
+
+main {
+    min-height: 70vh;
+    height: auto;
+}
+
