@@ -1,15 +1,18 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    let html = '<div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex py-1"><div class="coffee bg-primary p-2 text-light rounded m-auto d-flex d-md-block">';
-    html += `<h2>${coffee.name}</h2>`;
-    html += `<p>${coffee.roast}</p>`;
+    let html = '<div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex py-1"><div class="coffee bg-primary p-2 text-light rounded m-auto d-flex align-items-end justify-content-between d-md-block">';
+    html += `<h2 class="m-0">${coffee.name}</h2>`;
+    html += `<p class="m-0">${coffee.roast}</p>`;
     html += '</div></div>';
 
     return html;
 }
 
 function renderCoffees(coffees) {
+    coffees.sort(coffees.id);
+    coffees.reverse();
+    console.log(coffees)
     let html = '';
     for (let i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
@@ -32,13 +35,8 @@ function updateCoffees(e, input) {
     } else if (input !== undefined && roastSelection.value === "all") {
         filteredCoffees = [...input];
     } else if (input !== undefined && roastSelection.value !== "all") {
-        input.forEach(coffee => {
-            if (coffee.roast === selectedRoast) {
-                filteredCoffees.push(coffee);
-            }
-        });
+        filteredCoffees = [...input];
     }
-    filteredCoffees = filteredCoffees.sort(filteredCoffees.id);
     coffeeDiv.innerHTML = renderCoffees(filteredCoffees);
 }
 
@@ -63,7 +61,6 @@ function updateInput(e) {
 
 function addCoffee(e, roast, name) {
     e.preventDefault();
-    console.log("hello");
     name = document.querySelector("#add-name-selector").value.toLowerCase();
     const nameCapitalized = name.charAt(0).toUpperCase() + name.slice(1);
     name = nameCapitalized;
@@ -74,9 +71,12 @@ function addCoffee(e, roast, name) {
             name: name,
             roast: roast
         }
-        coffees.push(newCoffee);
-        console.log(coffees);
-        updateCoffees(e, coffees);
+        let descendingOrder = coffees.sort(coffees.id);
+        if (coffees === descendingOrder) {
+            coffees.reverse();
+        }
+            coffees.unshift(newCoffee);
+            updateCoffees(e, coffees);
     }
 }
 
@@ -110,9 +110,6 @@ const addBtn = document.querySelector("#add button");
 let roast = "";
 let name = "";
 document.getElementById("add").addEventListener('submit', addCoffee, false)
-
-
-
 
 
 coffeeDiv.innerHTML = renderCoffees(coffees);
