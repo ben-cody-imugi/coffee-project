@@ -7,3 +7,31 @@ td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
+
+.input-group{
+    display: flex;
+    align-content: end;
+}
+#name-selector.input-group-sm{
+
+}
+
+button{
+    display: flex;
+    align-self: inherit;
+}
+
+#search-form{
+    display: flex;
+}
+
+#add-coffee-form{
+    display: flex;
+
+}
+
+#all-forms{
+    display: flex;
+    align-content: flex-end;
+}
+
