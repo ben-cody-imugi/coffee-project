@@ -71,10 +71,6 @@ function addCoffee(e, roast, name) {
             name: name,
             roast: roast
         }
-        let descendingOrder = coffees.sort(coffees.id);
-        if (coffees === descendingOrder) {
-            coffees.reverse();
-        }
             coffees.unshift(newCoffee);
             updateCoffees(e, coffees);
     }
