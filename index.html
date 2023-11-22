@@ -7,38 +7,42 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body class="bg-light-subtle">
-<header class="row w-100 bg-primary-subtle">
-    <section class="row " id="all-forms">
-        <div class="col-12 d-flex flex-wrap flex-md-nowrap justify-content-end">
-            <div class=" d-flex w-100 justify-content-center my-auto">
-                <h1>B.C. Coffee</h1>
-            </div>
-            <form class="border border-primary border-2 p-2 " id="search">
-                <label class="form-label " for="roast-selection"></label>
-                <select class="form-select-sm" id="roast-selection">
-                    <option value="all">all</option>
-                    <option value="light">light</option>
-                    <option value="medium">medium</option>
-                    <option value="dark">dark</option>
-                </select>
-                <label class="" for="name-selector">Search for a coffee</label>
-                <input class="input-group-sm m-1" type="text" id="name-selector">
-            </form>
-            <form class="border border-primary border-2 p-2 " id="add">
-                <label for="add-roast-selection"></label>
-                <select class="form-select-sm" id="add-roast-selection">
-                    <option value="all">all</option>
-                    <option value="light">light</option>
-                    <option value="medium">medium</option>
-                    <option value="dark">dark</option>
-                </select>
-                <label class="" for="name-selector">Add a coffee</label>
-                <input class="input-group-sm m-1" type="text" id="add-name-selector">
-                <div class="dropdown">
-                    <button class="btn btn-outline-primary m-1" type="button">Add Coffee</button>
+<header class="bg-secondary w-100">
+    <section class="container">
+        <section class="row">
+            <div class="d-md-flex border p-0">
+                <div class="col-md-4 d-flex justify-content-md-start justify-content-center my-auto">
+                    <h1 class="py-3 py-md-0">B.C. Coffee</h1>
                 </div>
-            </form>
-        </div>
+                <form class="col-12 col-md-4 d-flex flex-wrap border border-primary bg-transparent p-1 p-sm-2 p-md-3"
+                      id="search">
+                    <div class="col-12 d-flex"><h3 class="mx-auto">Browse our collection</h3></div>
+                    <select class="form-select-sm col-8" id="roast-selection">
+                        <option value="all">all</option>
+                        <option value="light">light</option>
+                        <option value="medium">medium</option>
+                        <option value="dark">dark</option>
+                    </select>
+                    <label class="form-label col-4 text-center" for="roast-selection">Roast Level</label>
+                    <label class="col-4 bg-danger" for="name-selector">Search for a coffee</label>
+                    <input class="col-8" type="text" id="name-selector">
+                </form>
+                <form class="col-12 col-md-4 d-flex flex-wrap border border-primary bg-transparent p-1 p-sm-2 p-md-3"
+                      id="add">
+                    <div class="col-12 d-flex"><h3 class="mx-auto">Add your favorites</h3></div>
+                    <select class="form-select-sm col-8" id="add-roast-selection">
+                        <option value="all">all</option>
+                        <option value="light">light</option>
+                        <option value="medium">medium</option>
+                        <option value="dark">dark</option>
+                    </select>
+                    <label class="form-label col-4 text-center" for="add-roast-selection">Roast Level</label>
+                    <label class="col-4 bg-danger" for="add-name-selector">Add a coffee</label>
+                    <input class="col-4" type="text" id="add-name-selector">
+                    <button class="btn btn-primary col-4" type="button">Add Coffee</button>
+                </form>
+            </div>
+        </section>
     </section>
 </header>
 <main class="container bg-light rounded border">

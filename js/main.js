@@ -74,6 +74,7 @@ function addCoffee(e, roast, name) {
         coffees.unshift(newCoffee);
         updateCoffees(e, coffees);
     }
+    document.querySelector("#add-name-selector").value = "";
 }
 
 function submitTest(e) {
