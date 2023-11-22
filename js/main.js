@@ -12,7 +12,6 @@ function renderCoffee(coffee) {
 function renderCoffees(coffees) {
     coffees.sort(coffees.id);
     coffees.reverse();
-    console.log(coffees)
     let html = '';
     for (let i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
@@ -35,7 +34,11 @@ function updateCoffees(e, input) {
     } else if (input !== undefined && roastSelection.value === "all") {
         filteredCoffees = [...input];
     } else if (input !== undefined && roastSelection.value !== "all") {
-        filteredCoffees = [...input];
+        input.forEach(coffee => {
+            if (coffee.roast === selectedRoast) {
+                filteredCoffees.push(coffee);
+            }
+        });
     }
     coffeeDiv.innerHTML = renderCoffees(filteredCoffees.sort(coffees.id).reverse());
 }
@@ -62,8 +65,7 @@ function updateInput(e) {
 function addCoffee(e, roast, name) {
     e.preventDefault();
     name = document.querySelector("#add-name-selector").value.toLowerCase();
-    const nameCapitalized = name.charAt(0).toUpperCase() + name.slice(1);
-    name = nameCapitalized;
+    name = name.charAt(0).toUpperCase() + name.slice(1);
     roast = document.querySelector("#add-roast-selection").value;
     if (roast !== "all" && name !== "") {
         const newCoffee = {
@@ -79,7 +81,6 @@ function addCoffee(e, roast, name) {
 
 function submitTest(e) {
     e.preventDefault();
-    console.log("submitted");
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
