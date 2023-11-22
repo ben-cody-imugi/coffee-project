@@ -19,24 +19,38 @@ function renderCoffees(coffees) {
     return html;
 }
 
-function updateCoffees(e, input) {
+function updateCoffeesAdd(e, input) {
+    e.preventDefault();
+    let filteredCoffees = [];
+        input.forEach(coffee => {
+                filteredCoffees.push(coffee);
+        });
+    coffeeDiv.innerHTML = renderCoffees(filteredCoffees.sort(coffees.id).reverse());
+}
+
+function updateCoffeesSearch(e, input) {
     e.preventDefault();
     const selectedRoast = roastSelection.value;
     let filteredCoffees = [];
-    if (input === undefined && roastSelection.value === "all") {
+    if (nameSelector.value === "" && roastSelection.value === "all")  {
         filteredCoffees = [...coffees];
-    } else if (input === undefined && roastSelection.value !== "all") {
+                console.log("no input, roast all");
+    }
+    if (nameSelector.value === "" && roastSelection.value !== "all") {
         for (let i = 0; i < coffees.length; i++) {
             if (coffees[i].roast === roastSelection.value) {
                 filteredCoffees.push(coffees[i]);
+                console.log("no input, roast selected");
             }
         }
     } else if (input !== undefined && roastSelection.value === "all") {
         filteredCoffees = [...input];
+        console.log("input defined, roast all")
     } else if (input !== undefined && roastSelection.value !== "all") {
         input.forEach(coffee => {
             if (coffee.roast === selectedRoast) {
                 filteredCoffees.push(coffee);
+                console.log("input defined, roast selected")
             }
         });
     }
@@ -46,20 +60,20 @@ function updateCoffees(e, input) {
 function updateInput(e) {
     e.preventDefault();
     const nameSelectorNew = nameSelector.value.toLowerCase()
-    let currentRoast = [];
+    let filteredCoffees = [];
     if (nameSelectorNew === "") {
         coffees.forEach(coffee => {
-            currentRoast.push(coffee);
+            filteredCoffees.push(coffee);
         })
     } else {
         coffees.forEach(coffee => {
                 if (coffee.name.toLowerCase().includes(nameSelectorNew)) {
-                    currentRoast.push(coffee);
+                    filteredCoffees.push(coffee);
                 }
             }
         )
     }
-    updateCoffees(e, currentRoast);
+    updateCoffeesSearch(e, filteredCoffees);
 }
 
 function addCoffee(e, roast, name) {
@@ -74,13 +88,9 @@ function addCoffee(e, roast, name) {
             roast: roast
         }
         coffees.unshift(newCoffee);
-        updateCoffees(e, coffees);
+        updateCoffeesAdd(e, coffees);
     }
     document.querySelector("#add-name-selector").value = "";
-}
-
-function submitTest(e) {
-    e.preventDefault();
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -103,7 +113,9 @@ const coffees = [
 
 const coffeeDiv = document.querySelector('#coffees');
 const roastSelection = document.querySelector('#roast-selection');
+const roastSelectionAdd = document.querySelector('#add-roast-selection');
 const nameSelector = document.querySelector('#name-selector');
+const nameSelectorAdd = document.querySelector('#add-name-selector');
 const addBtn = document.querySelector("#add button");
 let roast = "";
 let name = "";
@@ -112,8 +124,7 @@ document.getElementById("add").addEventListener('submit', addCoffee, false)
 
 coffeeDiv.innerHTML = renderCoffees(coffees);
 
-roastSelection.addEventListener("change", updateCoffees);
-nameSelector.addEventListener("input", updateInput, false);
+roastSelection.addEventListener("change", updateCoffeesSearch);
+nameSelector.addEventListener("input", updateInput);
 addBtn.addEventListener("click", addCoffee);
-document.querySelector("#add-name-selector").addEventListener("submit", updateInput, false);
 
