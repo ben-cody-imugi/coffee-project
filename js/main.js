@@ -113,7 +113,7 @@ document.getElementById("add").addEventListener('submit', addCoffee, false)
 coffeeDiv.innerHTML = renderCoffees(coffees);
 
 roastSelection.addEventListener("change", updateCoffees);
-nameSelector.addEventListener("input", updateInput);
+nameSelector.addEventListener("input", updateInput, false);
 addBtn.addEventListener("click", addCoffee);
-document.querySelector("#add-name-selector").addEventListener("submit", submitTest);
+document.querySelector("#add-name-selector").addEventListener("submit", updateInput, false);
 
