@@ -5,16 +5,17 @@
     <title></title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Mulish:300" rel="stylesheet">
 </head>
-<body class="bg-light-subtle">
-<header class="bg-secondary w-100">
+<body>
+<header class="w-100">
     <section class="container">
         <section class="row">
-            <div class="d-md-flex border p-0">
-                <div class="col-md-4 d-flex justify-content-md-start justify-content-center my-auto">
-                    <h1 class="py-3 py-md-0">B.C. Coffee</h1>
-                </div>
-                <form class="col-12 col-md-4 d-flex flex-wrap border border-primary bg-transparent p-1 p-sm-2 p-md-3"
+            <div class="d-md-flex flex-md-wrap p-0">
+                    <div class="col-12 d-flex justify-content-center my-3">
+                        <h1 class="py-3 py-md-0">B.C. Coffee</h1>
+                    </div>
+                <form class="col-12 col-md-6 d-flex flex-wrap bg-transparent p-1 p-sm-2 p-md-3"
                       id="search">
                     <div class="col-12 d-flex"><h3 class="mx-auto">Browse our collection</h3></div>
                     <select class="form-select-sm col-8" id="roast-selection">
@@ -24,10 +25,10 @@
                         <option value="dark">dark</option>
                     </select>
                     <label class="form-label col-4 text-center" for="roast-selection">Roast Level</label>
-                    <label class="col-4 bg-danger" for="name-selector">Search for a coffee</label>
+                    <label class="col-4" for="name-selector">Search for a coffee</label>
                     <input class="col-8" type="text" id="name-selector">
                 </form>
-                <form class="col-12 col-md-4 d-flex flex-wrap border border-primary bg-transparent p-1 p-sm-2 p-md-3"
+                <form class="col-12 col-md-6 d-flex flex-wrap bg-transparent p-1 p-sm-2 p-md-3"
                       id="add">
                     <div class="col-12 d-flex"><h3 class="mx-auto">Add your favorites</h3></div>
                     <select class="form-select-sm col-8" id="add-roast-selection">
@@ -37,15 +38,15 @@
                         <option value="dark">dark</option>
                     </select>
                     <label class="form-label col-4 text-center" for="add-roast-selection">Roast Level</label>
-                    <label class="col-4 bg-danger" for="add-name-selector">Add a coffee</label>
+                    <label class="col-4" for="add-name-selector">Add a coffee</label>
                     <input class="col-4" type="text" id="add-name-selector">
-                    <button class="btn btn-primary col-4" type="button">Add Coffee</button>
+                    <button class="rounded col-4" type="button">Add Coffee</button>
                 </form>
             </div>
         </section>
     </section>
 </header>
-<main class="container bg-light rounded border">
+<main class="container rounded-bottom">
     <section id="coffee-container" class="col-10 offset-1 h-auto row">
         <div class="col-12 d-flex flex-wrap my-3" id="coffees">
 
