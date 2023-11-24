@@ -1,5 +1,5 @@
 body {
-    background-color: #F4F1E3;
+    background-color: #d5d5d5 !important;
     font-family: 'Mulish', sans-serif !important;
     font-size: 1em !important;
 }
@@ -17,17 +17,17 @@ p {
 }
 
 header {
-    background-color: #A3C9A8;
+    background-color: #8CADA7;
+    color: #110B11;
 }
 
 main {
     min-height: 70vh;
     height: auto;
-    background-color: #A3C9A8;
 }
 
 main.container {
-    background-color: #DDD8C4;
+    background-color: #A5D0A8;
 }
 
 input {
@@ -37,54 +37,56 @@ input {
 button {
     box-shadow: none;
     border: none;
-    background-color: #50808E;
+    background-color: #B7990D;
     font-family: 'Mulish', sans-serif !important;
     font-size: 16px;
-    color: white;
+    color: #110B11;
 }
 
 button:hover {
-    background-color: #74a7b6;
+    background-color: #cbad24;
 }
 
 .coffee {
     width: 95%;
-    box-shadow: 6px 6px 0 0 #2a464d;
-    background-color: #50808E;
+    background-color: #110B11;
+    box-shadow: 3px 3px 0 0 #000000;
+    color: #B7990D;
 }
 
 .coffee:hover {
     position: relative;
-    top: 2px;
-    left: 2px;
-    background-color: #74a7b6;
-    box-shadow: 4px 4px 0 0 #2a464d;
+    bottom: 2px;
+    right: 2px;
+    background-color: #251825;
+    box-shadow: 4px 4px 0 0 #000000;
 }
 
 .coffee:active {
     position: relative;
-    top: 3px;
-    left: 3px;
-    background-color: #74a7b6;
-    box-shadow: 3px 3px 0 0 #2a464d;
+    top: 1px;
+    left: 1px;
+    background-color: #251825;
+    box-shadow: 1px 1px 0 0 #000000;
 }
 
 @media screen and (width <= 576px) {
     .coffee {
         width: 95%;
-        box-shadow: 2px 2px 0 0 #2a464d;
+        box-shadow: 2px 2px 0 0 #000000;
     }
 
     .coffee:hover {
         position: sticky;
-        background-color: #444337;
-        box-shadow: 2px 2px 0 0 #2a464d;
+        background-color: #110B11;
+        box-shadow: 2px 2px 0 0 #000000;
     }
 
     .coffee:active {
         position: relative;
         top: 1px;
         left: 1px;
-        box-shadow: 1px 1px 0 0 #2a464d;
+        background-color: #251825;
+        box-shadow: 1px 1px 0 0 #000000;
     }
 }
