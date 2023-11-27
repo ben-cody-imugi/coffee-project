@@ -1,5 +1,5 @@
 "use strict";
-
+(() => {
 function renderCoffee(coffee) {
     let html = '<div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex py-1"><div class="coffee p-2 rounded m-auto d-flex align-items-end justify-content-between d-md-block">';
     html += `<h2 class="m-0">${coffee.name}</h2>`;
@@ -119,4 +119,5 @@ coffeeDiv.innerHTML = renderCoffees(coffees);
 roastSelection.addEventListener("change", updateRoast);
 nameSelection.addEventListener("input", updateName);
 addBtn.addEventListener("click", createNewCoffee);
+})();
 
