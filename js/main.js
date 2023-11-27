@@ -22,13 +22,12 @@ function renderCoffees(coffees) {
 //---------updates displayed list by roast----------------
 function updateRoast(e) {
     e.preventDefault();
-    const currentRoast = roastSelection.value;
     let filteredCoffees = [];
-    if (currentRoast === "all") {
+    if (roastSelection.value === "all") {
         filteredCoffees = [...coffees];
     } else {
         coffees.forEach(coffee => {
-            if (coffee.roast === currentRoast) {
+            if (coffee.roast === roastSelection.value) {
                 filteredCoffees.push(coffee);
             }
         })
@@ -44,19 +43,15 @@ function updateRoast(e) {
 function updateName(e, roast) {
     e.preventDefault();
     const nameSelectionNew = nameSelection.value.toLowerCase()
-    const currentRoast = roastSelection.value;
-    console.log(currentRoast)
     let filteredCoffees = [];
     let coffeesByRoast = [];
     coffees.forEach(coffee => {
-        if (coffee.roast === currentRoast) {
+        if (coffee.roast === roastSelection.value) {
             coffeesByRoast.push(coffee);
-            console.log("hello")
-        } else if (currentRoast === "all") {
+        } else if (roastSelection.value === "all") {
             coffeesByRoast = [...coffees];
         }
     });
-    console.log(coffeesByRoast)
     if (roast !== undefined) {
         roast.forEach(coffee => {
                 if (coffee.name.toLowerCase().includes(nameSelectionNew)) {
@@ -118,7 +113,7 @@ function updateName(e, roast) {
     const roastSelection = document.querySelector('#roast-selection');
     const nameSelection = document.querySelector('#name-selector');
     const addBtn = document.querySelector("#add button");
-    document.getElementById("add").addEventListener('submit', createNewCoffee, false)
+    document.getElementById("add").addEventListener('submit', createNewCoffee, false);
 
     coffeeDiv.innerHTML = renderCoffees(coffees);
 
