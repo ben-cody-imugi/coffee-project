@@ -45,15 +45,18 @@ function updateName(e, roast) {
     e.preventDefault();
     const nameSelectionNew = nameSelection.value.toLowerCase()
     const currentRoast = roastSelection.value;
+    console.log(currentRoast)
     let filteredCoffees = [];
     let coffeesByRoast = [];
     coffees.forEach(coffee => {
         if (coffee.roast === currentRoast) {
             coffeesByRoast.push(coffee);
-        } else {
-            coffeesByRoast.push(coffee);
+            console.log("hello")
+        } else if (currentRoast === "all") {
+            coffeesByRoast = [...coffees];
         }
     });
+    console.log(coffeesByRoast)
     if (roast !== undefined) {
         roast.forEach(coffee => {
                 if (coffee.name.toLowerCase().includes(nameSelectionNew)) {
